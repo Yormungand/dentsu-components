@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DENTSU</title>
-    <link rel="stylesheet" href="dist/css/root.min.css?v=4">
-    <script src="dist/js/root.min.js?v=4"></script>
+    <link rel="stylesheet" href="dist/css/root.min.css?v=5">
+    <script src="dist/js/root.min.js?v=5"></script>
     <!--    <link rel="stylesheet" href="https://static.sodonsolution.org/fonts/roboto/fonts.css">-->
     <link rel="stylesheet" href="fonts/roboto/stylesheet.css">
     <link rel="stylesheet" href="fonts/Noto_sans/stylesheet.css">
@@ -16,6 +16,26 @@
 </head>
 
 <body>
+<script>
+    preloader_sessionKey = function () {
+        let data = sessionStorage.getItem("preloaded")
+
+        if (data){
+            return false
+        } else {
+            sessionStorage.setItem("preloaded", "true");
+            return true;
+        }
+
+    }
+    window.onload = function () {
+        if (preloader_sessionKey()){
+            document.querySelectorAll('.preloader')[0].style.display = 'flex'
+        } else {
+            document.querySelectorAll('.preloader')[0].remove()
+        }
+    }
+</script>
 <div class="preloader">
     <div class="uk-position-relative">
         <div class="preload-logo__wrapper transition-fade" style="opacity: 0" >
@@ -62,19 +82,19 @@
             <div>
                 <div class="menu">
                     <div>
-                        <a href="javascript:void 0">Our vision</a>
+                        <a href="#vision">Our vision</a>
                     </div>
                     <div>
-                        <a href="javascript:void 0">Our team</a>
+                        <a href="#team">Our team</a>
                     </div>
                     <div>
-                        <a href="javascript:void 0">About us</a>
+                        <a href="#about">About us</a>
                     </div>
                     <div>
-                        <a href="javascript:void 0">Case studies</a>
+                        <a href="#case_studies">Case studies</a>
                     </div>
                     <div>
-                        <a href="javascript:void 0">Current News</a>
+                        <a href="#articles">Current News</a>
                     </div>
                 </div>
             </div>
@@ -96,73 +116,322 @@
                  style="padding-bottom: 56.25%; background-image: url(images/bg-tech.png);">
             </div>
         </div>
-        <div id="section0" class="section uk-position-relative" data-anchor="team">
-
-            <div class="container-large">
-                <div class="uk-width-3-5@m uk-margin-auto">
-                    <div class="grid-30@m grid-20 uk-child-width-1-2">
-                        <div>
-                            <a href="javascript:void 0" class="superior employee">
-                                <img src="https://picsum.photos/500/500" alt="img">
-                                <div class="employee__info">
-                                    <div class="wrapper">
-                                        <div class="name">M. GANBOLD</div>
-                                        <div class="post">Mongolian President</div>
-                                        <div class="mask"></div>
+        <div id="section1" class="section" data-anchor="vision">
+            <div class="section-custom__wrap">
+                <div class="section-title">Our Vision</div>
+                <div class="section-content">
+                    <div class="page-section__wrapper">
+                        <div class="uk-position-relative uk-position-z-index">
+                            <div class="uk-flex uk-flex-middle uk-flex-column mb-40">
+                                <div style="font-size: 24px; font-weight: 400; color: #fff; line-height: 28px">Always to create
+                                    high value
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="grid-30 uk-child-width-1-3@m pt-45 vision vision-hidden">
+                                    <div>
+                                        <div class="text-card">
+                                            <div class="icon">
+                                                <svg width="79" height="80" viewBox="0 0 79 80" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M29.9766 0L28.0156 10.0938C24.719 11.337 21.6916 13.0797 19.0391 15.2578L9.34375 11.9141L0 28.0859L7.76562 34.8359C7.4671 36.6688 7.3125 38.3674 7.3125 40C7.3125 41.6351 7.47173 43.3305 7.76562 45.1641V45.1719L0 51.9219L9.34375 68.0859L19.0312 64.75C21.6841 66.9293 24.7182 68.6623 28.0156 69.9062L29.9766 80H48.6484L50.6094 69.9062C53.9082 68.6622 56.9321 66.9223 59.5859 64.7422L69.2812 68.0859L78.6172 51.9219L70.8594 45.1641C71.1579 43.3312 71.3125 41.6326 71.3125 40C71.3125 38.3698 71.157 36.6735 70.8594 34.8438V34.8359L78.625 28.0781L69.2812 11.9141L59.5938 15.25C56.9409 13.0707 53.9068 11.3377 50.6094 10.0938L48.6484 0H29.9766ZM36.5703 8H42.0547L43.6094 16L47.7813 17.5781C50.2959 18.5259 52.5552 19.827 54.5156 21.4375L57.9688 24.2656L65.6562 21.625L68.3984 26.3672L62.2578 31.7109L62.9609 36.1094V36.1172C63.2055 37.6169 63.3125 38.8751 63.3125 40C63.3125 41.1249 63.2055 42.3829 62.9609 43.8828L62.25 48.2812L68.3906 53.625L65.6484 58.375L57.9688 55.7266L54.5078 58.5625C52.5474 60.173 50.2959 61.4741 47.7813 62.4219H47.7734L43.6016 64L42.0469 72H36.5703L35.0156 64L30.8438 62.4219C28.3291 61.4741 26.0698 60.173 24.1094 58.5625L20.6562 55.7344L12.9688 58.375L10.2266 53.6328L16.375 48.2812L15.6641 43.8984V43.8906C15.423 42.3844 15.3125 41.1227 15.3125 40C15.3125 38.8751 15.4195 37.6171 15.6641 36.1172L16.375 31.7188L10.2266 26.375L12.9688 21.625L20.6562 24.2734L24.1094 21.4375C26.0698 19.827 28.3291 18.5259 30.8438 17.5781L35.0156 16L36.5703 8ZM39.3125 24C30.5264 24 23.3125 31.2139 23.3125 40C23.3125 48.7861 30.5264 56 39.3125 56C48.0986 56 55.3125 48.7861 55.3125 40C55.3125 31.2139 48.0986 24 39.3125 24ZM39.3125 32C43.7584 32 47.3125 35.5541 47.3125 40C47.3125 44.4459 43.7584 48 39.3125 48C34.8666 48 31.3125 44.4459 31.3125 40C31.3125 35.5541 34.8666 32 39.3125 32Z"
+                                                          fill="url(#paint0_linear_145_1201)"/>
+                                                    <path d="M29.9766 0L28.0156 10.0938C24.719 11.337 21.6916 13.0797 19.0391 15.2578L9.34375 11.9141L0 28.0859L7.76562 34.8359C7.4671 36.6688 7.3125 38.3674 7.3125 40C7.3125 41.6351 7.47173 43.3305 7.76562 45.1641V45.1719L0 51.9219L9.34375 68.0859L19.0312 64.75C21.6841 66.9293 24.7182 68.6623 28.0156 69.9062L29.9766 80H48.6484L50.6094 69.9062C53.9082 68.6622 56.9321 66.9223 59.5859 64.7422L69.2812 68.0859L78.6172 51.9219L70.8594 45.1641C71.1579 43.3312 71.3125 41.6326 71.3125 40C71.3125 38.3698 71.157 36.6735 70.8594 34.8438V34.8359L78.625 28.0781L69.2812 11.9141L59.5938 15.25C56.9409 13.0707 53.9068 11.3377 50.6094 10.0938L48.6484 0H29.9766ZM36.5703 8H42.0547L43.6094 16L47.7813 17.5781C50.2959 18.5259 52.5552 19.827 54.5156 21.4375L57.9688 24.2656L65.6562 21.625L68.3984 26.3672L62.2578 31.7109L62.9609 36.1094V36.1172C63.2055 37.6169 63.3125 38.8751 63.3125 40C63.3125 41.1249 63.2055 42.3829 62.9609 43.8828L62.25 48.2812L68.3906 53.625L65.6484 58.375L57.9688 55.7266L54.5078 58.5625C52.5474 60.173 50.2959 61.4741 47.7813 62.4219H47.7734L43.6016 64L42.0469 72H36.5703L35.0156 64L30.8438 62.4219C28.3291 61.4741 26.0698 60.173 24.1094 58.5625L20.6562 55.7344L12.9688 58.375L10.2266 53.6328L16.375 48.2812L15.6641 43.8984V43.8906C15.423 42.3844 15.3125 41.1227 15.3125 40C15.3125 38.8751 15.4195 37.6171 15.6641 36.1172L16.375 31.7188L10.2266 26.375L12.9688 21.625L20.6562 24.2734L24.1094 21.4375C26.0698 19.827 28.3291 18.5259 30.8438 17.5781L35.0156 16L36.5703 8ZM39.3125 24C30.5264 24 23.3125 31.2139 23.3125 40C23.3125 48.7861 30.5264 56 39.3125 56C48.0986 56 55.3125 48.7861 55.3125 40C55.3125 31.2139 48.0986 24 39.3125 24ZM39.3125 32C43.7584 32 47.3125 35.5541 47.3125 40C47.3125 44.4459 43.7584 48 39.3125 48C34.8666 48 31.3125 44.4459 31.3125 40C31.3125 35.5541 34.8666 32 39.3125 32Z"
+                                                          fill="url(#paint1_linear_145_1201)"/>
+                                                    <path d="M29.9766 0L28.0156 10.0938C24.719 11.337 21.6916 13.0797 19.0391 15.2578L9.34375 11.9141L0 28.0859L7.76562 34.8359C7.4671 36.6688 7.3125 38.3674 7.3125 40C7.3125 41.6351 7.47173 43.3305 7.76562 45.1641V45.1719L0 51.9219L9.34375 68.0859L19.0312 64.75C21.6841 66.9293 24.7182 68.6623 28.0156 69.9062L29.9766 80H48.6484L50.6094 69.9062C53.9082 68.6622 56.9321 66.9223 59.5859 64.7422L69.2812 68.0859L78.6172 51.9219L70.8594 45.1641C71.1579 43.3312 71.3125 41.6326 71.3125 40C71.3125 38.3698 71.157 36.6735 70.8594 34.8438V34.8359L78.625 28.0781L69.2812 11.9141L59.5938 15.25C56.9409 13.0707 53.9068 11.3377 50.6094 10.0938L48.6484 0H29.9766ZM36.5703 8H42.0547L43.6094 16L47.7813 17.5781C50.2959 18.5259 52.5552 19.827 54.5156 21.4375L57.9688 24.2656L65.6562 21.625L68.3984 26.3672L62.2578 31.7109L62.9609 36.1094V36.1172C63.2055 37.6169 63.3125 38.8751 63.3125 40C63.3125 41.1249 63.2055 42.3829 62.9609 43.8828L62.25 48.2812L68.3906 53.625L65.6484 58.375L57.9688 55.7266L54.5078 58.5625C52.5474 60.173 50.2959 61.4741 47.7813 62.4219H47.7734L43.6016 64L42.0469 72H36.5703L35.0156 64L30.8438 62.4219C28.3291 61.4741 26.0698 60.173 24.1094 58.5625L20.6562 55.7344L12.9688 58.375L10.2266 53.6328L16.375 48.2812L15.6641 43.8984V43.8906C15.423 42.3844 15.3125 41.1227 15.3125 40C15.3125 38.8751 15.4195 37.6171 15.6641 36.1172L16.375 31.7188L10.2266 26.375L12.9688 21.625L20.6562 24.2734L24.1094 21.4375C26.0698 19.827 28.3291 18.5259 30.8438 17.5781L35.0156 16L36.5703 8ZM39.3125 24C30.5264 24 23.3125 31.2139 23.3125 40C23.3125 48.7861 30.5264 56 39.3125 56C48.0986 56 55.3125 48.7861 55.3125 40C55.3125 31.2139 48.0986 24 39.3125 24ZM39.3125 32C43.7584 32 47.3125 35.5541 47.3125 40C47.3125 44.4459 43.7584 48 39.3125 48C34.8666 48 31.3125 44.4459 31.3125 40C31.3125 35.5541 34.8666 32 39.3125 32Z"
+                                                          fill="#0075FF"/>
+                                                    <defs>
+                                                        <linearGradient id="paint0_linear_145_1201" x1="39.3125" y1="0"
+                                                                        x2="39.3125" y2="80" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="white"/>
+                                                            <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint1_linear_145_1201" x1="79" y1="6.91845e-06"
+                                                                        x2="-1.51108e-06" y2="80"
+                                                                        gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#663CEA"/>
+                                                            <stop offset="1" stop-color="#0797FD"/>
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                            <div class="title">
+                                                By leading AI implementation in society
+                                            </div>
+                                            <div class="text">
+                                                AI alone isn`t Enough. Although we`re living in era of Technology, its practical
+                                                implementation in
+                                                society still remains behind. As a technology Company specialized in AI, we see
+                                                AI as our Tool in
+                                                solving real problems in society and making better environment for others. Under
+                                                this Vision of
+                                                ours, we choose our Tool (AI methodologies) from practicality perspective and
+                                                collaborate with
+                                                universities and researchers in bringing their idea into practice.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-card">
+                                            <div class="icon">
+                                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M40.5442 30.4C36.5976 30.4 33.386 27.1696 33.386 23.2C33.386 19.2304 36.5976 16 40.5442 16C44.4907 16 47.7023 19.2304 47.7023 23.2C47.7023 27.1696 44.4907 30.4 40.5442 30.4ZM40.5442 20.8C39.2295 20.8 38.1581 21.8776 38.1581 23.2C38.1581 24.5224 39.2295 25.6 40.5442 25.6C41.8589 25.6 42.9302 24.5224 42.9302 23.2C42.9302 21.8776 41.8589 20.8 40.5442 20.8ZM50 64H31V59.2H33.386V40H31V35.2H42.9302C45.562 35.2 47.7023 37.3528 47.7023 40V59.2H50V64ZM38.1581 59.2H42.9302V40H38.1581V59.2Z"
+                                                          fill="url(#paint0_linear_145_1202)"/>
+                                                    <path d="M40.5442 30.4C36.5976 30.4 33.386 27.1696 33.386 23.2C33.386 19.2304 36.5976 16 40.5442 16C44.4907 16 47.7023 19.2304 47.7023 23.2C47.7023 27.1696 44.4907 30.4 40.5442 30.4ZM40.5442 20.8C39.2295 20.8 38.1581 21.8776 38.1581 23.2C38.1581 24.5224 39.2295 25.6 40.5442 25.6C41.8589 25.6 42.9302 24.5224 42.9302 23.2C42.9302 21.8776 41.8589 20.8 40.5442 20.8ZM50 64H31V59.2H33.386V40H31V35.2H42.9302C45.562 35.2 47.7023 37.3528 47.7023 40V59.2H50V64ZM38.1581 59.2H42.9302V40H38.1581V59.2Z"
+                                                          fill="url(#paint1_linear_145_1202)"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                          d="M40 74C58.7777 74 74 58.7777 74 40C74 21.2223 58.7777 6 40 6C21.2223 6 6 21.2223 6 40C6 58.7777 21.2223 74 40 74ZM40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z"
+                                                          fill="url(#paint2_linear_145_1202)"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                          d="M40 74C58.7777 74 74 58.7777 74 40C74 21.2223 58.7777 6 40 6C21.2223 6 6 21.2223 6 40C6 58.7777 21.2223 74 40 74ZM40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z"
+                                                          fill="url(#paint3_linear_145_1202)"/>
+                                                    <defs>
+                                                        <linearGradient id="paint0_linear_145_1202" x1="40.5" y1="16" x2="40.5"
+                                                                        y2="64" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="white"/>
+                                                            <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint1_linear_145_1202" x1="50" y1="16" x2="17.1475"
+                                                                        y2="29.0041" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#0075FF"/>
+                                                            <stop offset="1" stop-color="#0797FD"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint2_linear_145_1202" x1="40" y1="0" x2="40"
+                                                                        y2="80" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="white"/>
+                                                            <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint3_linear_145_1202" x1="80" y1="0"
+                                                                        x2="9.53674e-06" y2="80" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#0075FF"/>
+                                                            <stop offset="1" stop-color="#0797FD"/>
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                            <div class="title">
+                                                By bringing solution to our clients business
+                                            </div>
+                                            <div class="text">
+                                                Optimal solution right on time. Companies don`t know for sure whether applying
+                                                AI will help them in
+                                                their business, unless they test their hypothesis or prototype through Proof of
+                                                Concept, in which
+                                                logical thinking, performance speed and affordable cost are vital. We provide
+                                                all three above in
+                                                doing our business.
+                                                We are logical thinkers who are fast and adaptable to new circumstances and
+                                                challenges. In addition,
+                                                we offer our services at affordable price while not compromising our quality.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-card">
+                                            <div class="icon">
+                                                <svg width="72" height="63" viewBox="0 0 72 63" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M60.3193 35C60.3193 40.5228 55.8422 45 50.3193 45C44.7965 45 40.3193 40.5228 40.3193 35C40.3193 29.4772 44.7965 25 50.3193 25C55.8422 25 60.3193 29.4772 60.3193 35Z"
+                                                          stroke="#0075FF" stroke-width="6"/>
+                                                    <path d="M58 60L56.4565 62.5725C57.3833 63.1286 58.5376 63.1431 59.4781 62.6106C60.4186 62.0781 61 61.0808 61 60H58ZM50.5 55.5L52.0435 52.9275C51.1193 52.373 49.9686 52.3569 49.0292 52.8853L50.5 55.5ZM42.5 60H39.5C39.5 61.0658 40.0655 62.0516 40.9855 62.5896C41.9055 63.1277 43.0419 63.1372 43.9708 62.6147L42.5 60ZM55 42V60H61V42H55ZM59.5435 57.4275L52.0435 52.9275L48.9565 58.0725L56.4565 62.5725L59.5435 57.4275ZM49.0292 52.8853L41.0292 57.3853L43.9708 62.6147L51.9708 58.1147L49.0292 52.8853ZM45.5 60V42H39.5V60H45.5Z"
+                                                          fill="#0075FF"/>
+                                                    <path d="M12.5 12C10.8431 12 9.5 13.3431 9.5 15C9.5 16.6569 10.8431 18 12.5 18V12ZM59.5 18C61.1569 18 62.5 16.6569 62.5 15C62.5 13.3431 61.1569 12 59.5 12V18ZM12.5 22.5C10.8431 22.5 9.5 23.8431 9.5 25.5C9.5 27.1569 10.8431 28.5 12.5 28.5V22.5ZM31.5 28.5C33.1569 28.5 34.5 27.1569 34.5 25.5C34.5 23.8431 33.1569 22.5 31.5 22.5V28.5ZM12.5 32C10.8431 32 9.5 33.3431 9.5 35C9.5 36.6569 10.8431 38 12.5 38V32ZM31.5 38C33.1569 38 34.5 36.6569 34.5 35C34.5 33.3431 33.1569 32 31.5 32V38ZM12.5 18H59.5V12H12.5V18ZM12.5 28.5H31.5V22.5H12.5V28.5ZM12.5 38H31.5V32H12.5V38Z"
+                                                          fill="#0075FF"/>
+                                                    <path d="M60 50H66C67.6569 50 69 48.6569 69 47V6C69 4.34315 67.6569 3 66 3H6C4.34315 3 3 4.34315 3 6V47C3 48.6569 4.34315 50 6 50H43"
+                                                          stroke="#0075FF" stroke-width="6"/>
+                                                </svg>
+                                            </div>
+                                            <div class="title">
+                                                By providing opportunities to our employees
+                                            </div>
+                                            <div class="text">
+                                                Global exposure mentored by Experts. As a Company depending on human
+                                                intelligence, we always value
+                                                our Employees above all and aim to create development opportunities for them.
+                                                Our members have
+                                                experience in collaborating with Dentsu Japan Network clients in Digital
+                                                Marketing under mentorship
+                                                of Experts of the field. Also, in doing business, we encourage our members to
+                                                practice not only
+                                                their hard skill but also their soft skill which, we believe, will create more
+                                                value in their future
+                                                career.
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="javascript:void 0" class="superior employee">
-                                <img src="https://picsum.photos/500/500" alt="img">
-                                <div class="employee__info">
-                                    <div class="wrapper">
-                                        <div class="name">M. GANBOLD</div>
-                                        <div class="post">Mongolian President</div>
-                                        <div class="mask"></div>
-                                    </div>
-                                </div>
-                            </a>
+                            </div>
+                            <!--<div style="margin-left: auto; padding-top: 50px; max-width: 550px; text-align: right; font-size: 36px; font-weight: 900; line-height: 42px; color: #fff">
+                                We help our clients succeed by delivering products that improve life, work and play.
+                            </div>-->
                         </div>
                     </div>
                 </div>
-                <div class="uk-width-3-4@m uk-margin-auto uk-margin-top">
-                    <div class="grid-30@m grid-20 uk-child-width-1-3">
-                        <div>
-                            <a href="javascript:void 0" class="employee">
-                                <img src="https://picsum.photos/500/500" alt="img">
-                                <div class="employee__info">
-                                    <div class="wrapper">
-                                        <div class="name">M. GANBOLD</div>
-                                        <div class="post">Mongolian President</div>
-                                        <div class="mask"></div>
+            </div>
+            <div class="shine-1">
+                <div class="sphere-1">
+                    <svg width="461" height="461" viewBox="0 0 461 461" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.25" filter="url(#filter0_f_145_1190)">
+                            <circle cx="230.644" cy="230.644" r="154.653" transform="rotate(15 230.644 230.644)"
+                                    fill="url(#paint0_linear_145_1190)"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_f_145_1190" x="0.952637" y="0.952637" width="459.382" height="459.382"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_145_1190"/>
+                            </filter>
+                            <linearGradient id="paint0_linear_145_1190" x1="385.296" y1="75.9911" x2="70.6788"
+                                            y2="81.4922" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#663CEA"/>
+                                <stop offset="1" stop-color="#0797FD"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <div class="shine-2">
+                <div class="sphere-2">
+                    <svg width="335" height="335" viewBox="0 0 335 335" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_f_145_1188)">
+                            <circle cx="167.33" cy="167.33" r="117.326" transform="rotate(90 167.33 167.33)"
+                                    fill="url(#paint0_linear_145_1188)"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_f_145_1188" x="0.00390625" y="0.00366211" width="334.652"
+                                    height="334.653" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_145_1188"/>
+                            </filter>
+                            <linearGradient id="paint0_linear_145_1188" x1="284.656" y1="50.0037" x2="45.9737"
+                                            y2="54.1771" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#663CEA"/>
+                                <stop offset="1" stop-color="#0797FD"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="section uk-position-relative fp-auto-height" data-anchor="team">
+            <div class="section-custom__wrap">
+                <div class="section-title">Our Team</div>
+                <div class="section-content">
+                    <div class="section-content__wrapper">
+                        <div class="container-large">
+                            <div class="uk-width-3-5@m uk-margin-auto">
+                                <div class="grid-30@m grid-20 uk-child-width-1-2">
+                                    <div>
+                                        <a href="javascript:void 0" class="superior employee">
+                                            <img src="https://picsum.photos/500/500" alt="img">
+                                            <div class="employee__info">
+                                                <div class="wrapper">
+                                                    <div class="name">M. GANBOLD</div>
+                                                    <div class="post">Mongolian President</div>
+                                                    <div class="mask"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:void 0" class="superior employee">
+                                            <img src="https://picsum.photos/500/500" alt="img">
+                                            <div class="employee__info">
+                                                <div class="wrapper">
+                                                    <div class="name">M. GANBOLD</div>
+                                                    <div class="post">Mongolian President</div>
+                                                    <div class="mask"></div>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="javascript:void 0" class="employee">
-                                <img src="https://picsum.photos/500/500" alt="img">
-                                <div class="employee__info">
-                                    <div class="wrapper">
-                                        <div class="name">M. GANBOLD</div>
-                                        <div class="post">Mongolian President</div>
-                                        <div class="mask"></div>
+                            </div>
+                            <div class="uk-margin-auto uk-margin-top">
+                                <div class="grid-30@m grid-20 uk-child-width-1-3">
+                                    <div>
+                                        <div class="team">
+                                            <div class="team-card">
+                                                <div class="img-wrapper">
+                                                    <img src="https://picsum.photos/500/500" alt="img">
+                                                </div>
+                                                <div class="team-info">
+                                                    <div class="team-leader">
+                                                        <div class="leader-wrapper">
+                                                            <img src="https://picsum.photos/300/300" alt="img">
+                                                            <div class="leader-info">
+                                                                <div class="name">O. Gantulga</div>
+                                                                <div class="post">Data Engineer Lead</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="team-info__card">
+                                                        <div class="wrapper">
+                                                            <div class="name">Developer team</div>
+                                                            <div class="desc">Click here to show team informations</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="team">
+                                            <div class="team-card">
+                                                <div class="img-wrapper">
+                                                    <img src="https://picsum.photos/500/500" alt="img">
+                                                </div>
+                                                <div class="team-info">
+                                                    <div class="team-leader">
+                                                        <div class="leader-wrapper">
+                                                            <img src="https://picsum.photos/300/300" alt="img">
+                                                            <div class="leader-info">
+                                                                <div class="name">O. Gantulga</div>
+                                                                <div class="post">Data Engineer Lead</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="team-info__card">
+                                                        <div class="wrapper">
+                                                            <div class="name">Developer team</div>
+                                                            <div class="desc">Click here to show team informations</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="team">
+                                            <div class="team-card">
+                                                <div class="img-wrapper">
+                                                    <img src="https://picsum.photos/500/500" alt="img">
+                                                </div>
+                                                <div class="team-info">
+                                                    <div class="team-leader">
+                                                        <div class="leader-wrapper">
+                                                            <img src="https://picsum.photos/300/300" alt="img">
+                                                            <div class="leader-info">
+                                                                <div class="name">O. Gantulga</div>
+                                                                <div class="post">Data Engineer Lead</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="team-info__card">
+                                                        <div class="wrapper">
+                                                            <div class="name">Developer team</div>
+                                                            <div class="desc">Click here to show team informations</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="javascript:void 0" class="employee">
-                                <img src="https://picsum.photos/500/500" alt="img">
-                                <div class="employee__info">
-                                    <div class="wrapper">
-                                        <div class="name">M. GANBOLD</div>
-                                        <div class="post">Mongolian President</div>
-                                    </div>
-                                </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -350,237 +619,45 @@
                 </svg>
             </div>
         </div>
-        <div id="section1" class="section" data-anchor="vision">
-            <div class="page-section__wrapper">
-                <div class="uk-position-relative uk-position-z-index">
-                    <div class="uk-flex uk-flex-middle uk-flex-column">
-                        <div class="section-title pb-20">Our Vision</div>
-                        <div style="font-size: 24px; font-weight: 400; color: #fff; line-height: 28px">Always to create
-                            high value
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="grid-30 uk-child-width-1-3@m pt-45 vision vision-hidden">
-                            <div>
-                                <div class="text-card">
-                                    <div class="icon">
-                                        <svg width="79" height="80" viewBox="0 0 79 80" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M29.9766 0L28.0156 10.0938C24.719 11.337 21.6916 13.0797 19.0391 15.2578L9.34375 11.9141L0 28.0859L7.76562 34.8359C7.4671 36.6688 7.3125 38.3674 7.3125 40C7.3125 41.6351 7.47173 43.3305 7.76562 45.1641V45.1719L0 51.9219L9.34375 68.0859L19.0312 64.75C21.6841 66.9293 24.7182 68.6623 28.0156 69.9062L29.9766 80H48.6484L50.6094 69.9062C53.9082 68.6622 56.9321 66.9223 59.5859 64.7422L69.2812 68.0859L78.6172 51.9219L70.8594 45.1641C71.1579 43.3312 71.3125 41.6326 71.3125 40C71.3125 38.3698 71.157 36.6735 70.8594 34.8438V34.8359L78.625 28.0781L69.2812 11.9141L59.5938 15.25C56.9409 13.0707 53.9068 11.3377 50.6094 10.0938L48.6484 0H29.9766ZM36.5703 8H42.0547L43.6094 16L47.7813 17.5781C50.2959 18.5259 52.5552 19.827 54.5156 21.4375L57.9688 24.2656L65.6562 21.625L68.3984 26.3672L62.2578 31.7109L62.9609 36.1094V36.1172C63.2055 37.6169 63.3125 38.8751 63.3125 40C63.3125 41.1249 63.2055 42.3829 62.9609 43.8828L62.25 48.2812L68.3906 53.625L65.6484 58.375L57.9688 55.7266L54.5078 58.5625C52.5474 60.173 50.2959 61.4741 47.7813 62.4219H47.7734L43.6016 64L42.0469 72H36.5703L35.0156 64L30.8438 62.4219C28.3291 61.4741 26.0698 60.173 24.1094 58.5625L20.6562 55.7344L12.9688 58.375L10.2266 53.6328L16.375 48.2812L15.6641 43.8984V43.8906C15.423 42.3844 15.3125 41.1227 15.3125 40C15.3125 38.8751 15.4195 37.6171 15.6641 36.1172L16.375 31.7188L10.2266 26.375L12.9688 21.625L20.6562 24.2734L24.1094 21.4375C26.0698 19.827 28.3291 18.5259 30.8438 17.5781L35.0156 16L36.5703 8ZM39.3125 24C30.5264 24 23.3125 31.2139 23.3125 40C23.3125 48.7861 30.5264 56 39.3125 56C48.0986 56 55.3125 48.7861 55.3125 40C55.3125 31.2139 48.0986 24 39.3125 24ZM39.3125 32C43.7584 32 47.3125 35.5541 47.3125 40C47.3125 44.4459 43.7584 48 39.3125 48C34.8666 48 31.3125 44.4459 31.3125 40C31.3125 35.5541 34.8666 32 39.3125 32Z"
-                                                  fill="url(#paint0_linear_145_1201)"/>
-                                            <path d="M29.9766 0L28.0156 10.0938C24.719 11.337 21.6916 13.0797 19.0391 15.2578L9.34375 11.9141L0 28.0859L7.76562 34.8359C7.4671 36.6688 7.3125 38.3674 7.3125 40C7.3125 41.6351 7.47173 43.3305 7.76562 45.1641V45.1719L0 51.9219L9.34375 68.0859L19.0312 64.75C21.6841 66.9293 24.7182 68.6623 28.0156 69.9062L29.9766 80H48.6484L50.6094 69.9062C53.9082 68.6622 56.9321 66.9223 59.5859 64.7422L69.2812 68.0859L78.6172 51.9219L70.8594 45.1641C71.1579 43.3312 71.3125 41.6326 71.3125 40C71.3125 38.3698 71.157 36.6735 70.8594 34.8438V34.8359L78.625 28.0781L69.2812 11.9141L59.5938 15.25C56.9409 13.0707 53.9068 11.3377 50.6094 10.0938L48.6484 0H29.9766ZM36.5703 8H42.0547L43.6094 16L47.7813 17.5781C50.2959 18.5259 52.5552 19.827 54.5156 21.4375L57.9688 24.2656L65.6562 21.625L68.3984 26.3672L62.2578 31.7109L62.9609 36.1094V36.1172C63.2055 37.6169 63.3125 38.8751 63.3125 40C63.3125 41.1249 63.2055 42.3829 62.9609 43.8828L62.25 48.2812L68.3906 53.625L65.6484 58.375L57.9688 55.7266L54.5078 58.5625C52.5474 60.173 50.2959 61.4741 47.7813 62.4219H47.7734L43.6016 64L42.0469 72H36.5703L35.0156 64L30.8438 62.4219C28.3291 61.4741 26.0698 60.173 24.1094 58.5625L20.6562 55.7344L12.9688 58.375L10.2266 53.6328L16.375 48.2812L15.6641 43.8984V43.8906C15.423 42.3844 15.3125 41.1227 15.3125 40C15.3125 38.8751 15.4195 37.6171 15.6641 36.1172L16.375 31.7188L10.2266 26.375L12.9688 21.625L20.6562 24.2734L24.1094 21.4375C26.0698 19.827 28.3291 18.5259 30.8438 17.5781L35.0156 16L36.5703 8ZM39.3125 24C30.5264 24 23.3125 31.2139 23.3125 40C23.3125 48.7861 30.5264 56 39.3125 56C48.0986 56 55.3125 48.7861 55.3125 40C55.3125 31.2139 48.0986 24 39.3125 24ZM39.3125 32C43.7584 32 47.3125 35.5541 47.3125 40C47.3125 44.4459 43.7584 48 39.3125 48C34.8666 48 31.3125 44.4459 31.3125 40C31.3125 35.5541 34.8666 32 39.3125 32Z"
-                                                  fill="url(#paint1_linear_145_1201)"/>
-                                            <path d="M29.9766 0L28.0156 10.0938C24.719 11.337 21.6916 13.0797 19.0391 15.2578L9.34375 11.9141L0 28.0859L7.76562 34.8359C7.4671 36.6688 7.3125 38.3674 7.3125 40C7.3125 41.6351 7.47173 43.3305 7.76562 45.1641V45.1719L0 51.9219L9.34375 68.0859L19.0312 64.75C21.6841 66.9293 24.7182 68.6623 28.0156 69.9062L29.9766 80H48.6484L50.6094 69.9062C53.9082 68.6622 56.9321 66.9223 59.5859 64.7422L69.2812 68.0859L78.6172 51.9219L70.8594 45.1641C71.1579 43.3312 71.3125 41.6326 71.3125 40C71.3125 38.3698 71.157 36.6735 70.8594 34.8438V34.8359L78.625 28.0781L69.2812 11.9141L59.5938 15.25C56.9409 13.0707 53.9068 11.3377 50.6094 10.0938L48.6484 0H29.9766ZM36.5703 8H42.0547L43.6094 16L47.7813 17.5781C50.2959 18.5259 52.5552 19.827 54.5156 21.4375L57.9688 24.2656L65.6562 21.625L68.3984 26.3672L62.2578 31.7109L62.9609 36.1094V36.1172C63.2055 37.6169 63.3125 38.8751 63.3125 40C63.3125 41.1249 63.2055 42.3829 62.9609 43.8828L62.25 48.2812L68.3906 53.625L65.6484 58.375L57.9688 55.7266L54.5078 58.5625C52.5474 60.173 50.2959 61.4741 47.7813 62.4219H47.7734L43.6016 64L42.0469 72H36.5703L35.0156 64L30.8438 62.4219C28.3291 61.4741 26.0698 60.173 24.1094 58.5625L20.6562 55.7344L12.9688 58.375L10.2266 53.6328L16.375 48.2812L15.6641 43.8984V43.8906C15.423 42.3844 15.3125 41.1227 15.3125 40C15.3125 38.8751 15.4195 37.6171 15.6641 36.1172L16.375 31.7188L10.2266 26.375L12.9688 21.625L20.6562 24.2734L24.1094 21.4375C26.0698 19.827 28.3291 18.5259 30.8438 17.5781L35.0156 16L36.5703 8ZM39.3125 24C30.5264 24 23.3125 31.2139 23.3125 40C23.3125 48.7861 30.5264 56 39.3125 56C48.0986 56 55.3125 48.7861 55.3125 40C55.3125 31.2139 48.0986 24 39.3125 24ZM39.3125 32C43.7584 32 47.3125 35.5541 47.3125 40C47.3125 44.4459 43.7584 48 39.3125 48C34.8666 48 31.3125 44.4459 31.3125 40C31.3125 35.5541 34.8666 32 39.3125 32Z"
-                                                  fill="#0075FF"/>
-                                            <defs>
-                                                <linearGradient id="paint0_linear_145_1201" x1="39.3125" y1="0"
-                                                                x2="39.3125" y2="80" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="white"/>
-                                                    <stop offset="1" stop-color="white" stop-opacity="0"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint1_linear_145_1201" x1="79" y1="6.91845e-06"
-                                                                x2="-1.51108e-06" y2="80"
-                                                                gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#663CEA"/>
-                                                    <stop offset="1" stop-color="#0797FD"/>
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                    <div class="title">
-                                        By leading AI implementation in society
-                                    </div>
-                                    <div class="text">
-                                        AI alone isn`t Enough. Although we`re living in era of Technology, its practical
-                                        implementation in
-                                        society still remains behind. As a technology Company specialized in AI, we see
-                                        AI as our Tool in
-                                        solving real problems in society and making better environment for others. Under
-                                        this Vision of
-                                        ours, we choose our Tool (AI methodologies) from practicality perspective and
-                                        collaborate with
-                                        universities and researchers in bringing their idea into practice.
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="text-card">
-                                    <div class="icon">
-                                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M40.5442 30.4C36.5976 30.4 33.386 27.1696 33.386 23.2C33.386 19.2304 36.5976 16 40.5442 16C44.4907 16 47.7023 19.2304 47.7023 23.2C47.7023 27.1696 44.4907 30.4 40.5442 30.4ZM40.5442 20.8C39.2295 20.8 38.1581 21.8776 38.1581 23.2C38.1581 24.5224 39.2295 25.6 40.5442 25.6C41.8589 25.6 42.9302 24.5224 42.9302 23.2C42.9302 21.8776 41.8589 20.8 40.5442 20.8ZM50 64H31V59.2H33.386V40H31V35.2H42.9302C45.562 35.2 47.7023 37.3528 47.7023 40V59.2H50V64ZM38.1581 59.2H42.9302V40H38.1581V59.2Z"
-                                                  fill="url(#paint0_linear_145_1202)"/>
-                                            <path d="M40.5442 30.4C36.5976 30.4 33.386 27.1696 33.386 23.2C33.386 19.2304 36.5976 16 40.5442 16C44.4907 16 47.7023 19.2304 47.7023 23.2C47.7023 27.1696 44.4907 30.4 40.5442 30.4ZM40.5442 20.8C39.2295 20.8 38.1581 21.8776 38.1581 23.2C38.1581 24.5224 39.2295 25.6 40.5442 25.6C41.8589 25.6 42.9302 24.5224 42.9302 23.2C42.9302 21.8776 41.8589 20.8 40.5442 20.8ZM50 64H31V59.2H33.386V40H31V35.2H42.9302C45.562 35.2 47.7023 37.3528 47.7023 40V59.2H50V64ZM38.1581 59.2H42.9302V40H38.1581V59.2Z"
-                                                  fill="url(#paint1_linear_145_1202)"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M40 74C58.7777 74 74 58.7777 74 40C74 21.2223 58.7777 6 40 6C21.2223 6 6 21.2223 6 40C6 58.7777 21.2223 74 40 74ZM40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z"
-                                                  fill="url(#paint2_linear_145_1202)"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                  d="M40 74C58.7777 74 74 58.7777 74 40C74 21.2223 58.7777 6 40 6C21.2223 6 6 21.2223 6 40C6 58.7777 21.2223 74 40 74ZM40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z"
-                                                  fill="url(#paint3_linear_145_1202)"/>
-                                            <defs>
-                                                <linearGradient id="paint0_linear_145_1202" x1="40.5" y1="16" x2="40.5"
-                                                                y2="64" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="white"/>
-                                                    <stop offset="1" stop-color="white" stop-opacity="0"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint1_linear_145_1202" x1="50" y1="16" x2="17.1475"
-                                                                y2="29.0041" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#0075FF"/>
-                                                    <stop offset="1" stop-color="#0797FD"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint2_linear_145_1202" x1="40" y1="0" x2="40"
-                                                                y2="80" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="white"/>
-                                                    <stop offset="1" stop-color="white" stop-opacity="0"/>
-                                                </linearGradient>
-                                                <linearGradient id="paint3_linear_145_1202" x1="80" y1="0"
-                                                                x2="9.53674e-06" y2="80" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#0075FF"/>
-                                                    <stop offset="1" stop-color="#0797FD"/>
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                    <div class="title">
-                                        By bringing solution to our clients business
-                                    </div>
-                                    <div class="text">
-                                        Optimal solution right on time. Companies don`t know for sure whether applying
-                                        AI will help them in
-                                        their business, unless they test their hypothesis or prototype through Proof of
-                                        Concept, in which
-                                        logical thinking, performance speed and affordable cost are vital. We provide
-                                        all three above in
-                                        doing our business.
-                                        We are logical thinkers who are fast and adaptable to new circumstances and
-                                        challenges. In addition,
-                                        we offer our services at affordable price while not compromising our quality.
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="text-card">
-                                    <div class="icon">
-                                        <svg width="72" height="63" viewBox="0 0 72 63" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M60.3193 35C60.3193 40.5228 55.8422 45 50.3193 45C44.7965 45 40.3193 40.5228 40.3193 35C40.3193 29.4772 44.7965 25 50.3193 25C55.8422 25 60.3193 29.4772 60.3193 35Z"
-                                                  stroke="#0075FF" stroke-width="6"/>
-                                            <path d="M58 60L56.4565 62.5725C57.3833 63.1286 58.5376 63.1431 59.4781 62.6106C60.4186 62.0781 61 61.0808 61 60H58ZM50.5 55.5L52.0435 52.9275C51.1193 52.373 49.9686 52.3569 49.0292 52.8853L50.5 55.5ZM42.5 60H39.5C39.5 61.0658 40.0655 62.0516 40.9855 62.5896C41.9055 63.1277 43.0419 63.1372 43.9708 62.6147L42.5 60ZM55 42V60H61V42H55ZM59.5435 57.4275L52.0435 52.9275L48.9565 58.0725L56.4565 62.5725L59.5435 57.4275ZM49.0292 52.8853L41.0292 57.3853L43.9708 62.6147L51.9708 58.1147L49.0292 52.8853ZM45.5 60V42H39.5V60H45.5Z"
-                                                  fill="#0075FF"/>
-                                            <path d="M12.5 12C10.8431 12 9.5 13.3431 9.5 15C9.5 16.6569 10.8431 18 12.5 18V12ZM59.5 18C61.1569 18 62.5 16.6569 62.5 15C62.5 13.3431 61.1569 12 59.5 12V18ZM12.5 22.5C10.8431 22.5 9.5 23.8431 9.5 25.5C9.5 27.1569 10.8431 28.5 12.5 28.5V22.5ZM31.5 28.5C33.1569 28.5 34.5 27.1569 34.5 25.5C34.5 23.8431 33.1569 22.5 31.5 22.5V28.5ZM12.5 32C10.8431 32 9.5 33.3431 9.5 35C9.5 36.6569 10.8431 38 12.5 38V32ZM31.5 38C33.1569 38 34.5 36.6569 34.5 35C34.5 33.3431 33.1569 32 31.5 32V38ZM12.5 18H59.5V12H12.5V18ZM12.5 28.5H31.5V22.5H12.5V28.5ZM12.5 38H31.5V32H12.5V38Z"
-                                                  fill="#0075FF"/>
-                                            <path d="M60 50H66C67.6569 50 69 48.6569 69 47V6C69 4.34315 67.6569 3 66 3H6C4.34315 3 3 4.34315 3 6V47C3 48.6569 4.34315 50 6 50H43"
-                                                  stroke="#0075FF" stroke-width="6"/>
-                                        </svg>
-                                    </div>
-                                    <div class="title">
-                                        By providing opportunities to our employees
-                                    </div>
-                                    <div class="text">
-                                        Global exposure mentored by Experts. As a Company depending on human
-                                        intelligence, we always value
-                                        our Employees above all and aim to create development opportunities for them.
-                                        Our members have
-                                        experience in collaborating with Dentsu Japan Network clients in Digital
-                                        Marketing under mentorship
-                                        of Experts of the field. Also, in doing business, we encourage our members to
-                                        practice not only
-                                        their hard skill but also their soft skill which, we believe, will create more
-                                        value in their future
-                                        career.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<div style="margin-left: auto; padding-top: 50px; max-width: 550px; text-align: right; font-size: 36px; font-weight: 900; line-height: 42px; color: #fff">
-                        We help our clients succeed by delivering products that improve life, work and play.
-                    </div>-->
-                </div>
-            </div>
-            <div class="shine-1">
-                <div class="sphere-1">
-                    <svg width="461" height="461" viewBox="0 0 461 461" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g opacity="0.25" filter="url(#filter0_f_145_1190)">
-                            <circle cx="230.644" cy="230.644" r="154.653" transform="rotate(15 230.644 230.644)"
-                                    fill="url(#paint0_linear_145_1190)"/>
-                        </g>
-                        <defs>
-                            <filter id="filter0_f_145_1190" x="0.952637" y="0.952637" width="459.382" height="459.382"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                <feGaussianBlur stdDeviation="37.5" result="effect1_foregroundBlur_145_1190"/>
-                            </filter>
-                            <linearGradient id="paint0_linear_145_1190" x1="385.296" y1="75.9911" x2="70.6788"
-                                            y2="81.4922" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#663CEA"/>
-                                <stop offset="1" stop-color="#0797FD"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-            </div>
-            <div class="shine-2">
-                <div class="sphere-2">
-                    <svg width="335" height="335" viewBox="0 0 335 335" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g filter="url(#filter0_f_145_1188)">
-                            <circle cx="167.33" cy="167.33" r="117.326" transform="rotate(90 167.33 167.33)"
-                                    fill="url(#paint0_linear_145_1188)"/>
-                        </g>
-                        <defs>
-                            <filter id="filter0_f_145_1188" x="0.00390625" y="0.00366211" width="334.652"
-                                    height="334.653" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_145_1188"/>
-                            </filter>
-                            <linearGradient id="paint0_linear_145_1188" x1="284.656" y1="50.0037" x2="45.9737"
-                                            y2="54.1771" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#663CEA"/>
-                                <stop offset="1" stop-color="#0797FD"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-            </div>
-        </div>
         <div class="section uk-position-relative" data-anchor="about">
-            <!--<div class="uk-flex uk-flex-middle uk-flex-column" style="position: absolute; top: 100px; width: 100%">
-                <div class="section-title pb-45">About Us</div>
-            </div>-->
-            <div class="uk-flex uk-flex-middle uk-flex-column">
-                <div style="">
-                    <svg width="365" height="146" viewBox="0 0 365 146" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <rect width="365" height="146" fill="url(#pattern0)"/>
-                        <defs>
-                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <use xlink:href="#image0_136_2621"
-                                     transform="translate(-0.1 -0.121368) scale(0.00197266 0.00493165)"/>
-                            </pattern>
-                            <image id="image0_136_2621" width="643" height="268"
-                                   xlink:href="data:image/png;base64,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"/>
-                        </defs>
-                    </svg>
-                </div>
-            </div>
-            <div class="container-large">
-                <div class="about-text">
-                    <p>Dentsu Data Artist Mongol LLC was established as a subsidiary of Data Artist Inc. in June 2018, in
-                        Ulaanbaatar Mongolia. Currently we are operating with around 50 Mongolian youths, from which 30 are
-                        located in Mongolia. Company office is located at Central Tower, one of the most prestigious office
-                        buildings in Ulaanbaatar.</p>
-                    <p>As a member of Dentsu Japan Network we have been providing digital marketing services to Dentsu Group.
-                        During three years since the establishment, we have successfully delivered over 80 projects, in which
-                        we`ve developed AI and Web systems together with Data analysis. </p>
-                    <p>During the period we have recruited over 100 Engineers and Data analysts, who are now successfully
-                        pursuing their dreams in Global market, and in Mongolian Technology startup Companies. Also, we
-                        collaborate with other local Technology Companies with whom we share same values and belong to same
-                        Machine Learning Community.</p>
-                    <p>Since the third year of the operation, we have started to accomplish our annual sales budget, and now are
-                        eager to expand our business to Dentsu International.</p>
+            <div class="section-custom__wrap">
+                <div class="section-title">About Us</div>
+                <div class="section-content">
+                    <div class="section-content__wrapper">
+                        <div class="uk-flex uk-flex-middle uk-flex-column">
+                            <div style="">
+                                <svg width="365" height="146" viewBox="0 0 365 146" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="365" height="146" fill="url(#pattern0)"/>
+                                    <defs>
+                                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                            <use xlink:href="#image0_136_2621"
+                                                 transform="translate(-0.1 -0.121368) scale(0.00197266 0.00493165)"/>
+                                        </pattern>
+                                        <image id="image0_136_2621" width="643" height="268"
+                                               xlink:href="data:image/png;base64,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"/>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="container-large">
+                            <div class="about-text">
+                                <p>Dentsu Data Artist Mongol LLC was established as a subsidiary of Data Artist Inc. in June 2018, in
+                                    Ulaanbaatar Mongolia. Currently we are operating with around 50 Mongolian youths, from which 30 are
+                                    located in Mongolia. Company office is located at Central Tower, one of the most prestigious office
+                                    buildings in Ulaanbaatar.</p>
+                                <p>As a member of Dentsu Japan Network we have been providing digital marketing services to Dentsu Group.
+                                    During three years since the establishment, we have successfully delivered over 80 projects, in which
+                                    we`ve developed AI and Web systems together with Data analysis. </p>
+                                <p>During the period we have recruited over 100 Engineers and Data analysts, who are now successfully
+                                    pursuing their dreams in Global market, and in Mongolian Technology startup Companies. Also, we
+                                    collaborate with other local Technology Companies with whom we share same values and belong to same
+                                    Machine Learning Community.</p>
+                                <p>Since the third year of the operation, we have started to accomplish our annual sales budget, and now are
+                                    eager to expand our business to Dentsu International.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="floating-planet-1">
@@ -620,11 +697,305 @@
                 </svg>
             </div>
         </div>
-        <!--<div class="section" id="contact" data-anchor="contact">
-            <div class="container-large">
-
+        <div class="section" data-anchor="case_studies">
+            <div class="section-custom__wrap">
+                <div class="section-title">Case Studies</div>
+                <div class="section-content">
+                    <div class="section-content__wrapper">
+                        <div class="container-large">
+                            <div class="grid-30 uk-child-width-1-3@m">
+                                <div>
+                                    <a href="javascript:void 0" class="card-transparent">
+                                        <div class="front">
+                                            <img src="https://picsum.photos/500/500" alt="img">
+                                            <div class="card-transparent__info">
+                                                <div class="wrapper">
+                                                    <div class="name">POC And Ai solution</div>
+                                                    <div class="post">Online Diagnosis System</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="javascript:void 0" class="card-transparent">
+                                        <div class="front">
+                                            <img src="https://picsum.photos/500/500" alt="img">
+                                            <div class="card-transparent__info">
+                                                <div class="wrapper">
+                                                    <div class="name">POC And Ai solution</div>
+                                                    <div class="post">Online Diagnosis System</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="javascript:void 0" class="card-transparent">
+                                        <div class="front">
+                                            <img src="https://picsum.photos/500/500" alt="img">
+                                            <div class="card-transparent__info">
+                                                <div class="wrapper">
+                                                    <div class="name">POC And Ai solution</div>
+                                                    <div class="post">Online Diagnosis System</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="uk-width-3-5@m uk-margin-auto mt-30">
+                                <a href="javascript:void 0" class="card-transparent card__long">
+                                    <div class="front">
+                                        <img src="https://picsum.photos/500/500" alt="img">
+                                        <div class="card-transparent__info">
+                                            <div class="wrapper">
+                                                <div class="name">POC And Ai solution</div>
+                                                <div class="post">Online Diagnosis System</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>-->
+        </div>
+        <div class="section" data-anchor="articles">
+            <div class="section-custom__wrap">
+                <div class="section-title">Current News</div>
+                <div class="section-content">
+                    <div class="section-content__wrapper">
+                        <div class="container">
+                            <div class="swiper article-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void 0" class="card-article">
+                                            <div class="img-wrapper">
+                                                <img src="https://picsum.photos/500/500" alt="img">
+                                                <div class="overlay">
+                                                    Learn more
+                                                </div>
+                                            </div>
+                                            <div class="info-wrapper">
+                                                <div class="title lineClamp4">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                </div>
+                                                <div class="summary">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores corporis
+                                                    excepturi omnis veniam! Aliquam!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void 0" class="card-article">
+                                            <div class="img-wrapper">
+                                                <img src="https://picsum.photos/500/500" alt="img">
+                                                <div class="overlay">
+                                                    Learn more
+                                                </div>
+                                            </div>
+                                            <div class="info-wrapper">
+                                                <div class="title lineClamp4">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                </div>
+                                                <div class="summary">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores corporis
+                                                    excepturi omnis veniam! Aliquam!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void 0" class="card-article">
+                                            <div class="img-wrapper">
+                                                <img src="https://picsum.photos/500/500" alt="img">
+                                                <div class="overlay">
+                                                    Learn more
+                                                </div>
+                                            </div>
+                                            <div class="info-wrapper">
+                                                <div class="title lineClamp4">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                </div>
+                                                <div class="summary">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores corporis
+                                                    excepturi omnis veniam! Aliquam!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void 0" class="card-article">
+                                            <div class="img-wrapper">
+                                                <img src="https://picsum.photos/500/500" alt="img">
+                                                <div class="overlay">
+                                                    Learn more
+                                                </div>
+                                            </div>
+                                            <div class="info-wrapper">
+                                                <div class="title lineClamp4">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                </div>
+                                                <div class="summary">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores corporis
+                                                    excepturi omnis veniam! Aliquam!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <script>
+                                    new Swiper(".article-swiper", {
+                                        slidesPerView: 2,
+                                        spaceBetween: 30,
+                                        pagination: {
+                                            el: ".swiper-pagination",
+                                        },
+                                    })
+                                </script>
+                            </div>
+                            <!--<div class="grid-20 uk-child-width-1-2">
+                                <div>
+                                    <a href="javascript:void 0" class="card-article">
+                                        <div class="img-wrapper">
+                                            <img src="https://picsum.photos/500/500" alt="img">
+                                            <div class="overlay">
+                                                Learn more
+                                            </div>
+                                        </div>
+                                        <div class="info-wrapper">
+                                            <div class="title lineClamp4">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            </div>
+                                            <div class="summary">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores corporis
+                                                excepturi omnis veniam! Aliquam!
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="javascript:void 0" class="card-article">
+                                        <div class="img-wrapper">
+                                            <img src="https://picsum.photos/500/500" alt="img">
+                                            <div class="overlay">
+                                                Learn more
+                                            </div>
+                                        </div>
+                                        <div class="info-wrapper">
+                                            <div class="title lineClamp4">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            </div>
+                                            <div class="summary">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores corporis
+                                                excepturi omnis veniam! Aliquam!
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section fp-auto-height" data-anchor="contact">
+            <div class="section-custom__wrap">
+                <div class="section-title">Contact Us</div>
+                <div class="section-content">
+                    <div class="section-content__wrapper">
+                        <div class="container-small">
+                            <div class="contact">
+                                <div class="contact-form__wrapper uk-child-width-1-2@m">
+                                    <div>
+                                        <input type="text" class="uk-width-1-1" placeholder="Name*" onchange="this.setAttribute('value', this.value);" value="">
+                                    </div>
+                                    <div>
+                                        <input type="text" class="uk-width-1-1" placeholder="Email*" onchange="this.setAttribute('value', this.value);" value="">
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <textarea cols="30" rows="10" placeholder="Your message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-20">
+                                    <button class="button-submit">submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="ft-items uk-child-width-1-3@m">
+                        <div>
+                            <div class="item">
+                                <i class="icon">
+                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 0H2C0.9 0 0.00999999 0.9 0.00999999 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z" fill="white"/>
+                                    </svg>
+                                </i>
+                                <div class="text">
+                                    <div>ddam@mn.data-artist.com</div>
+                                </div>
+                            </div>
+                            <div class="item mt-20">
+                                <i class="icon">
+                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 0H2C0.9 0 0.00999999 0.9 0.00999999 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z" fill="white"/>
+                                    </svg>
+                                </i>
+                                <div class="text">
+                                    <div>ddam@mn.data-artist.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item">
+                                <i class="icon">
+                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 0H2C0.9 0 0.00999999 0.9 0.00999999 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z" fill="white"/>
+                                    </svg>
+                                </i>
+                                <div class="text">
+                                    <div class="heading">
+                                        Mongolia office
+                                    </div>
+                                    <div>
+                                        1310-1313 Central tower
+                                        building, Sukhbaatar district,
+                                        Ulaanbaatar, Mongolia
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="item">
+                                <i class="icon">
+                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 0H2C0.9 0 0.00999999 0.9 0.00999999 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z" fill="white"/>
+                                    </svg>
+                                </i>
+                                <div class="text">
+                                    <div class="heading">
+                                        Mongolia office
+                                    </div>
+                                    <div>
+                                        1310-1313 Central tower
+                                        building, Sukhbaatar district,
+                                        Ulaanbaatar, Mongolia
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
